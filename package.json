@@ -1,0 +1,24 @@
+{
+  "name": "brastlewark",
+  "version": "1.0.0",
+  "description": "React app to help the IOL team with trading in Brastlewark",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osanchezdev/iol-challenge.git"
+  },
+  "keywords": [
+    "brastlewark",
+    "iol",
+    "gnome-finder"
+  ],
+  "author": "Oscar Sanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osanchezdev/iol-challenge/issues"
+  },
+  "homepage": "https://github.com/osanchezdev/iol-challenge#readme"
+}
