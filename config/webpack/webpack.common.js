@@ -30,11 +30,7 @@ module.exports = {
   },
   plugins: [
     new SimpleProgressWebpackPlugin(),
-    new CleanWebpackPlugin({
-      dry: true,
-
-      cleanStaleWebpackAssets: false,
-    }),
+    new CleanWebpackPlugin({}),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../../public", "index.html"),
     }),

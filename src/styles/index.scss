@@ -1,0 +1,9 @@
+$black: #000;
+$yellowgreen: yellowgreen;
+
+body {
+  background-color: $black;
+  & div {
+    color: $yellowgreen;
+  }
+}
