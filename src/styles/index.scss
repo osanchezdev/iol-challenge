@@ -1,9 +1,12 @@
-$black: #000;
-$yellowgreen: yellowgreen;
+// Import bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// $black: #000;
+// $yellowgreen: yellowgreen;
 
 body {
-  background-color: $black;
-  & div {
-    color: $yellowgreen;
-  }
+  // background-color: $black;
+  // & div {
+  //   color: $yellowgreen;
+  // }
 }
