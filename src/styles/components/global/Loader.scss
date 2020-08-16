@@ -1,7 +1,8 @@
 .loader--wrapper {
-  min-height: 500px;
+  min-height: 200px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
