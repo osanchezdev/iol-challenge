@@ -1,22 +1,13 @@
-import React, {useEffect, useContext} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './styles/index.scss';
 import GnomesProvider from './context/gnomesContext';
 
-import {GnomesContext} from './context/gnomesContext';
+import Home from './components/Home';
 
 const App = () => {
-  const {brastlewarkGnomes, loadGnomesData} = useContext(GnomesContext);
-  useEffect(() => {
-    loadGnomesData();
-  }, []);
-  return (
-    <div>
-      <h1>Hello gnomes!</h1>
-      {brastlewarkGnomes ? JSON.stringify(brastlewarkGnomes) : 'LOADING...'}
-    </div>
-  );
+  return <Home />;
 };
 ReactDOM.render(
   <React.StrictMode>
