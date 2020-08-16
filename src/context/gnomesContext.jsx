@@ -9,9 +9,9 @@ const GnomesProvider = ({children}) => {
   const [brastlewarkGnomes, setBrastlewarkGnomes] = useState(null);
   const [filteredGnomes, setFilteredGnomes] = useState(null);
   const [gnomeDetail, setGnomeDetail] = useState(null);
+
   const loadGnomesData = async () => {
     const gnomesResponse = await getBrastlewarkData();
-
     setBrastlewarkGnomes(gnomesResponse?.data?.Brastlewark ?? null);
     setFilteredGnomes(gnomesResponse?.data?.Brastlewark ?? null);
   };
@@ -28,10 +28,11 @@ const GnomesProvider = ({children}) => {
     setFilteredGnomes(brastlewarkGnomes);
   };
 
-  const findGnomeByName = nameToFind => {
-    if (nameToFind) {
-      setGnomeDetail(
-        _.find(filteredGnomes, gnome => {
+  const findGnomeByName = async nameToFind => {
+    if (_.isEmpty(brastlewarkGnomes)) return;
+    if (nameToFind && !_.isEmpty(brastlewarkGnomes)) {
+      await setGnomeDetail(
+        _.find(brastlewarkGnomes, gnome => {
           return gnome.name === nameToFind;
         }),
       );
