@@ -1,15 +1,17 @@
-import * as React from 'react';
+import React, {Suspense} from 'react';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
-import loadable from '@loadable/component';
+import Loader from '../components/global/Loader';
 
-const LazyHome = loadable(() => import('../components/Home'));
+const LazyHome = React.lazy(() => import('../components/Home'));
 
 export const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path={'/'} component={LazyHome} />
-        <Redirect to={'/'} />
+        <Suspense fallback={<Loader />}>
+          <Route exact path={'/'} component={LazyHome} />
+          <Redirect to={'/'} />
+        </Suspense>
       </Switch>
     </Router>
   );

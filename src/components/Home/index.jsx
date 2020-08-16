@@ -1,13 +1,13 @@
-import React, {useEffect, useContext} from 'react';
-import loadable from '@loadable/component';
+import React, {Suspense, useEffect, useContext} from 'react';
 import qs from 'query-string';
+import Loader from '../global/Loader';
 import {Container, Row, Col, Badge} from 'react-bootstrap';
 import {Link, useLocation} from 'react-router-dom';
 import {GnomesContext} from '../../context/gnomesContext';
 
-const LazyGnomeCardsList = loadable(() => import('../global/GnomeCardsList'));
-const LazySearchForm = loadable(() => import('./SearchForm'));
-const LazyInfoModal = loadable(() => import('../global/InfoModal'));
+const LazyGnomeCardsList = React.lazy(() => import('../global/GnomeCardsList'));
+const LazySearchForm = React.lazy(() => import('./SearchForm'));
+const LazyInfoModal = React.lazy(() => import('../global/InfoModal'));
 
 const Home = () => {
   const location = useLocation();
@@ -47,9 +47,11 @@ const Home = () => {
           )}
         </Col>
       </Row>
-      <LazySearchForm />
-      <LazyGnomeCardsList />
-      <LazyInfoModal />
+      <Suspense fallback={<Loader />}>
+        <LazySearchForm />
+        <LazyGnomeCardsList />
+        <LazyInfoModal />
+      </Suspense>
     </Container>
   );
 };
