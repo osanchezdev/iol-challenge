@@ -1,12 +1,21 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Badge} from 'react-bootstrap';
+import {motion} from 'framer-motion';
 
 import '../../styles/components/global/NoResults.scss';
 
 const NoResults = () => {
   return (
-    <div className="no-results--wrapper">
+    <motion.div
+      className="no-results--wrapper"
+      initial={{scale: 0, opacity: 0}}
+      animate={{scale: 1, opacity: 1}}
+      transition={{
+        type: 'spring',
+        stiffness: 260,
+        damping: 20,
+      }}>
       <div className="no-results--emoji">
         <span>&#128533;</span>
       </div>
@@ -22,7 +31,7 @@ const NoResults = () => {
           </Badge>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -48,4 +48,9 @@ module.exports = merge(common, {
       chunkFilename: '[id].[hash].css',
     }),
   ],
+  devServer: {
+    stats: {
+      warnings: false,
+    },
+  },
 });

@@ -12,7 +12,7 @@ const InfoModal = () => {
   return (
     <>
       {!_.isEmpty(gnomeDetail) ? (
-        <Modal show={true} onHide={goBack} size="sm" animation={false} centered>
+        <Modal show={true} onHide={goBack} size="sm" centered>
           <Modal.Header closeButton>
             <Modal.Title>{gnomeDetail.name || 'Unknown'}</Modal.Title>
           </Modal.Header>
