@@ -1,4 +1,5 @@
 import React, {useEffect, useContext} from 'react';
+import qs from 'query-string';
 import {Container, Row, Col} from 'react-bootstrap';
 import {useLocation} from 'react-router-dom';
 import {GnomesContext} from '../../context/gnomesContext';
@@ -8,14 +9,20 @@ import InfoModal from '../global/InfoModal';
 
 const Home = () => {
   const location = useLocation();
-  const {filteredGnomes, loadGnomesData, searchGnomeByName} = useContext(GnomesContext);
+  const {
+    filteredGnomes,
+    gnomeDetail,
+    loadGnomesData,
+    searchGnomeByName,
+    findGnomeByName,
+  } = useContext(GnomesContext);
 
   useEffect(() => {
     loadGnomesData();
   }, []);
 
   useEffect(() => {
-    console.log(location);
+    findGnomeByName(qs.parse(location.search)?.name ?? '');
   }, [location]);
 
   return (
@@ -34,7 +41,7 @@ const Home = () => {
             </Col>
           ))}
       </Row>
-      <InfoModal show={location.search !== ''} />
+      <InfoModal show={gnomeDetail !== null} {...gnomeDetail} />
     </Container>
   );
 };
