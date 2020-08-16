@@ -6,15 +6,18 @@ import {GnomesContext} from '../../context/gnomesContext';
 import GnomeCard from '../global/GnomeCard';
 import SearchForm from './SearchForm';
 import InfoModal from '../global/InfoModal';
+import Loader from '../global/Loader';
 
 const Home = () => {
   const location = useLocation();
+  let parsedSearch = qs.parse(location.search);
   const {
     filteredGnomes,
     gnomeDetail,
     loadGnomesData,
     searchGnomeByName,
     findGnomeByName,
+    filterGnomesByProfession,
   } = useContext(GnomesContext);
 
   useEffect(() => {
@@ -22,7 +25,8 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    findGnomeByName(qs.parse(location.search)?.name ?? '');
+    if (parsedSearch.profession) filterGnomesByProfession(parsedSearch.profession);
+    findGnomeByName(parsedSearch?.name ?? '');
   }, [location]);
 
   return (
@@ -30,16 +34,22 @@ const Home = () => {
       <Row>
         <Col>
           <h1>Brastlewark Searcher</h1>
+          {parsedSearch.profession && (
+            <h4>(Filtered by profession = {parsedSearch.profession}) </h4>
+          )}
         </Col>
       </Row>
-      <SearchForm searchGnomeByName={searchGnomeByName} />
+      <SearchForm searchGnomeByName={searchGnomeByName} loading={!filteredGnomes} />
       <Row>
-        {filteredGnomes &&
+        {filteredGnomes ? (
           filteredGnomes.map(gnome => (
             <Col key={gnome.id} xs={6} sm={6} xl={3} md={3}>
               <GnomeCard {...gnome} />
             </Col>
-          ))}
+          ))
+        ) : (
+          <Loader />
+        )}
       </Row>
       <InfoModal show={gnomeDetail !== null} {...gnomeDetail} />
     </Container>

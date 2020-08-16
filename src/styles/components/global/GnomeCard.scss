@@ -9,13 +9,6 @@
     border-radius: 0.25rem;
     overflow: hidden;
     height: 100%;
-    & .gnome-card--image {
-      position: absolute;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
-      max-width: 160%;
-    }
   }
   & .gnome-card--title {
     position: absolute;

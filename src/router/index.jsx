@@ -6,10 +6,8 @@ export const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route path={'/'} component={Home} />
-        <Route path={'*'}>
-          <Redirect to={'/'} />
-        </Route>
+        <Route exact path={'/'} component={Home} />
+        <Redirect to={'/'} />
       </Switch>
     </Router>
   );

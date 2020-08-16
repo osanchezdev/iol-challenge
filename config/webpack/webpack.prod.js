@@ -12,6 +12,16 @@ module.exports = merge(common, {
   },
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        vendors: false,
+        vendor: {
+          chunks: 'all',
+          test: /node_modules/,
+        },
+      },
+    },
   },
   module: {
     rules: [
