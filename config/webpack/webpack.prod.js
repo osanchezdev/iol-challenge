@@ -14,11 +14,16 @@ module.exports = merge(common, {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     splitChunks: {
       cacheGroups: {
-        default: false,
-        vendors: false,
         vendor: {
+          name: 'node_vendors', // part of the bundle name and
+          // can be used in chunks array of HtmlWebpackPlugin
+          test: /[\\/]node_modules[\\/]/,
           chunks: 'all',
-          test: /node_modules/,
+        },
+        common: {
+          test: /[\\/]src[\\/]components[\\/]/,
+          chunks: 'all',
+          minSize: 0,
         },
       },
     },
