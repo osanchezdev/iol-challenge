@@ -39,6 +39,18 @@ const GnomesProvider = ({children}) => {
     }
     setGnomeDetail(null);
   };
+
+  const filterGnomesByProfession = professionToSearch => {
+    if (professionToSearch) {
+      setFilteredGnomes(
+        _.filter(brastlewarkGnomes, gnome => {
+          return _.includes(gnome.professions, professionToSearch);
+        }),
+      );
+      return;
+    }
+    setFilteredGnomes(brastlewarkGnomes);
+  };
   return (
     <GnomesContext.Provider
       value={{
@@ -48,6 +60,7 @@ const GnomesProvider = ({children}) => {
         loadGnomesData,
         searchGnomeByName,
         findGnomeByName,
+        filterGnomesByProfession,
       }}>
       {children}
     </GnomesContext.Provider>

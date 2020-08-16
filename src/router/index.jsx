@@ -1,15 +1,15 @@
 import * as React from 'react';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
-import Home from '../components/Home';
+import loadable from '@loadable/component';
+
+const LazyHome = loadable(() => import('../components/Home'));
 
 export const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route path={'/'} component={Home} />
-        <Route path={'*'}>
-          <Redirect to={'/'} />
-        </Route>
+        <Route exact path={'/'} component={LazyHome} />
+        <Redirect to={'/'} />
       </Switch>
     </Router>
   );

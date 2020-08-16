@@ -54,9 +54,15 @@ const InfoModal = ({
             {professions.length ? (
               professions.map(profession => (
                 <Col key={profession}>
-                  <Badge pill variant="light">
-                    {profession}
-                  </Badge>
+                  <Link
+                    to={{
+                      pathname: '/',
+                      search: `?profession=${profession}`,
+                    }}>
+                    <Badge pill variant="light">
+                      {profession}
+                    </Badge>
+                  </Link>
                 </Col>
               ))
             ) : (
