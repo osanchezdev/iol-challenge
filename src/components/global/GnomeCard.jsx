@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import {LazyLoadImage} from 'react-lazy-load-image-component';
 import '../../styles/components/global/GnomeCard.scss';
 
-const variants = {
+const cardVariants = {
   visible: {
     opacity: 1,
     transition: {
@@ -16,7 +16,7 @@ const variants = {
 };
 const GnomeCard = ({id, name, thumbnail}) => {
   return (
-    <motion.div animate="visible" initial="hidden" variants={variants}>
+    <motion.div animate="visible" initial="hidden" variants={cardVariants}>
       <Link
         id={id}
         to={{
