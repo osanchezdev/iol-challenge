@@ -1,5 +1,4 @@
 import React from 'react';
-import _ from 'lodash';
 import {string, number} from 'prop-types';
 import {Link} from 'react-router-dom';
 import {LazyLoadImage} from 'react-lazy-load-image-component';
@@ -11,7 +10,7 @@ const GnomeCard = ({id, name, thumbnail}) => {
       id={id}
       to={{
         pathname: '/',
-        search: `?name=${_.toLower(name)}`,
+        search: `?name=${name}`,
       }}>
       <div className="gnome-card--wrapper">
         <div className="gnome-card--image-wrapper">
