@@ -1,24 +1,20 @@
 import React, {useEffect, useContext} from 'react';
+import loadable from '@loadable/component';
 import qs from 'query-string';
 import {Container, Row, Col} from 'react-bootstrap';
 import {useLocation} from 'react-router-dom';
 import {GnomesContext} from '../../context/gnomesContext';
-import GnomeCard from '../global/GnomeCard';
-import SearchForm from './SearchForm';
 import InfoModal from '../global/InfoModal';
-import Loader from '../global/Loader';
+
+const LazyGnomeCardsList = loadable(() => import('../global/GnomeCardsList'));
+const LazySearchForm = loadable(() => import('./SearchForm'));
 
 const Home = () => {
   const location = useLocation();
   let parsedSearch = qs.parse(location.search);
-  const {
-    filteredGnomes,
-    gnomeDetail,
-    loadGnomesData,
-    searchGnomeByName,
-    findGnomeByName,
-    filterGnomesByProfession,
-  } = useContext(GnomesContext);
+  const {gnomeDetail, loadGnomesData, findGnomeByName, filterGnomesByProfession} = useContext(
+    GnomesContext,
+  );
 
   useEffect(() => {
     loadGnomesData();
@@ -39,18 +35,8 @@ const Home = () => {
           )}
         </Col>
       </Row>
-      <SearchForm searchGnomeByName={searchGnomeByName} loading={!filteredGnomes} />
-      <Row>
-        {filteredGnomes ? (
-          filteredGnomes.map(gnome => (
-            <Col key={gnome.id} xs={6} sm={6} xl={3} md={3}>
-              <GnomeCard {...gnome} />
-            </Col>
-          ))
-        ) : (
-          <Loader />
-        )}
-      </Row>
+      <LazySearchForm />
+      <LazyGnomeCardsList />
       <InfoModal show={gnomeDetail !== null} {...gnomeDetail} />
     </Container>
   );

@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import _ from 'lodash';
-import {func, bool} from 'prop-types';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers';
 import {Row, Col, InputGroup, FormControl, Button} from 'react-bootstrap';
+import {GnomesContext} from '../../context/gnomesContext';
 import {SEARCH_SCHEMA} from '../../constants/validationSchemas';
 
-const SearchForm = ({searchGnomeByName, loading}) => {
+const SearchForm = () => {
+  const {filteredGnomes, searchGnomeByName} = useContext(GnomesContext);
   const {
     register,
     handleSubmit,
@@ -25,7 +26,7 @@ const SearchForm = ({searchGnomeByName, loading}) => {
           <Col>
             <InputGroup className="mb-3">
               <FormControl
-                disabled={loading}
+                disabled={!filteredGnomes}
                 size="lg"
                 placeholder="Gnome name"
                 aria-label="Gnome name"
@@ -45,11 +46,6 @@ const SearchForm = ({searchGnomeByName, loading}) => {
       </form>
     </div>
   );
-};
-
-SearchForm.propTypes = {
-  searchGnomeByName: func.isRequired,
-  loading: bool.isRequired,
 };
 
 export default SearchForm;
