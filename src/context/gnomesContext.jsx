@@ -10,7 +10,7 @@ const GnomesProvider = ({children}) => {
     const gnomesResponse = await getBrastlewarkData();
 
     console.log(gnomesResponse);
-    setBrastlewarkGnomes(gnomesResponse?.data?.brastlewark ?? []);
+    setBrastlewarkGnomes(gnomesResponse?.data?.Brastlewark ?? null);
   };
 
   return (
