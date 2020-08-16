@@ -27,8 +27,10 @@
   "homepage": "https://github.com/osanchezdev/iol-challenge#readme",
   "devDependencies": {
     "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "@babel/runtime": "^7.11.2",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -53,7 +55,9 @@
     "webpack-merge": "^5.1.1"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "bootstrap": "^4.5.2",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.13.1"
