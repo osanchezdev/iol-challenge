@@ -1,2 +1,13 @@
+// Rewrite Bootstrap variables
+$body-bg: #222;
+$card-bg: #303030;
+$body-color: #fff;
+
 // Import bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+
+// Global styles
+body {
+  color: #fff;
+}

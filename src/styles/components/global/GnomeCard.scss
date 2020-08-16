@@ -1,0 +1,40 @@
+.gnome-card--wrapper {
+  position: relative;
+  margin-top: 2rem;
+  border-radius: 0.25rem;
+  height: 168px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  & .gnome-card--image-wrapper {
+    position: relative;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    height: 100%;
+    & .gnome-card--image {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      max-width: 160%;
+    }
+  }
+  & .gnome-card--title {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.6979166666666667) 30%,
+      rgba(0, 212, 255, 0) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#00d4ff",GradientType=1);
+    & p {
+      margin-bottom: 0;
+      padding: 10px;
+    }
+  }
+}
