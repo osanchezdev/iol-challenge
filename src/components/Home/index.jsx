@@ -1,17 +1,22 @@
 import React, {useEffect, useContext} from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
+import {useLocation} from 'react-router-dom';
 import {GnomesContext} from '../../context/gnomesContext';
 import GnomeCard from '../global/GnomeCard';
 import SearchForm from './SearchForm';
+import InfoModal from '../global/InfoModal';
 
 const Home = () => {
-  const {brastlewarkGnomes, filteredGnomes, loadGnomesData, searchGnomeByName} = useContext(
-    GnomesContext,
-  );
+  const location = useLocation();
+  const {filteredGnomes, loadGnomesData, searchGnomeByName} = useContext(GnomesContext);
 
   useEffect(() => {
     loadGnomesData();
   }, []);
+
+  useEffect(() => {
+    console.log(location);
+  }, [location]);
 
   return (
     <Container className="py-4">
@@ -29,6 +34,7 @@ const Home = () => {
             </Col>
           ))}
       </Row>
+      <InfoModal show={location.search !== ''} />
     </Container>
   );
 };

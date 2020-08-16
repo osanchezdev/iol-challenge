@@ -1,19 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import './styles/index.scss';
 import GnomesProvider from './context/gnomesContext';
-
-import Home from './components/Home';
+import {Routes} from './router';
+import './styles/index.scss';
 
 const App = () => {
-  return <Home />;
+  return <Routes />;
 };
 ReactDOM.render(
-  <React.StrictMode>
-    <GnomesProvider>
-      <App />
-    </GnomesProvider>
-  </React.StrictMode>,
+  <GnomesProvider>
+    <App />
+  </GnomesProvider>,
   document.getElementById('root'),
 );

@@ -1,22 +1,32 @@
 import React from 'react';
-import {string} from 'prop-types';
+import _ from 'lodash';
+import {string, number} from 'prop-types';
+import {Link} from 'react-router-dom';
 import {LazyLoadImage} from 'react-lazy-load-image-component';
 import '../../styles/components/global/GnomeCard.scss';
 
-const GnomeCard = ({name, thumbnail}) => {
+const GnomeCard = ({id, name, thumbnail}) => {
   return (
-    <div className="gnome-card--wrapper">
-      <div className="gnome-card--image-wrapper">
-        <LazyLoadImage alt={name} title={name} height={168} src={thumbnail} width={'100%'} />
+    <Link
+      id={id}
+      to={{
+        pathname: '/',
+        search: `?name=${_.toLower(name)}`,
+      }}>
+      <div className="gnome-card--wrapper">
+        <div className="gnome-card--image-wrapper">
+          <LazyLoadImage alt={name} title={name} height={168} src={thumbnail} width={'100%'} />
+        </div>
+        <div className="gnome-card--title">
+          <p>{name} </p>
+        </div>
       </div>
-      <div className="gnome-card--title">
-        <p>{name} </p>
-      </div>
-    </div>
+    </Link>
   );
 };
 
 GnomeCard.propTypes = {
+  id: number,
   name: string,
   thumbnail: string,
 };

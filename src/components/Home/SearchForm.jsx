@@ -6,7 +6,11 @@ import {Row, Col, InputGroup, FormControl, Button} from 'react-bootstrap';
 import {SEARCH_SCHEMA} from '../../constants/validationSchemas';
 
 const SearchForm = ({searchGnomeByName}) => {
-  const {register, handleSubmit, errors} = useForm({
+  const {
+    register,
+    handleSubmit,
+    // errors
+  } = useForm({
     resolver: yupResolver(SEARCH_SCHEMA),
   });
 
