@@ -7,18 +7,33 @@ export const GnomesContext = createContext();
 
 const GnomesProvider = ({children}) => {
   const [brastlewarkGnomes, setBrastlewarkGnomes] = useState(null);
+  const [filteredGnomes, setFilteredGnomes] = useState(null);
   const loadGnomesData = async () => {
     const gnomesResponse = await getBrastlewarkData();
 
-    console.log(gnomesResponse);
     setBrastlewarkGnomes(gnomesResponse?.data?.Brastlewark ?? null);
+    setFilteredGnomes(gnomesResponse?.data?.Brastlewark ?? null);
+  };
+
+  const searchGnomeByName = nameToSearch => {
+    if (nameToSearch) {
+      setFilteredGnomes(
+        _.filter(brastlewarkGnomes, gnome => {
+          return gnome.name.includes(nameToSearch);
+        }),
+      );
+      return;
+    }
+    setFilteredGnomes(brastlewarkGnomes);
   };
 
   return (
     <GnomesContext.Provider
       value={{
         brastlewarkGnomes,
+        filteredGnomes,
         loadGnomesData,
+        searchGnomeByName,
       }}>
       {children}
     </GnomesContext.Provider>
