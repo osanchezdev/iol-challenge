@@ -8,11 +8,7 @@ import {SEARCH_SCHEMA} from '../../constants/validationSchemas';
 
 const SearchForm = () => {
   const {filteredGnomes, searchGnomeByName} = useContext(GnomesContext);
-  const {
-    register,
-    handleSubmit,
-    // errors
-  } = useForm({
+  const {register, handleSubmit} = useForm({
     resolver: yupResolver(SEARCH_SCHEMA),
   });
 
@@ -26,7 +22,7 @@ const SearchForm = () => {
           <Col>
             <InputGroup className="mb-3">
               <FormControl
-                disabled={!filteredGnomes}
+                disabled={!filteredGnomes.length}
                 size="lg"
                 placeholder="Gnome name"
                 aria-label="Gnome name"
@@ -36,7 +32,7 @@ const SearchForm = () => {
               />
 
               <InputGroup.Append size="lg">
-                <Button type="submit" variant="outline-secondary">
+                <Button type="submit" variant="outline-light">
                   Search
                 </Button>
               </InputGroup.Append>

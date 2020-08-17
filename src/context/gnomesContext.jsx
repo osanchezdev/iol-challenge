@@ -10,13 +10,25 @@ const GnomesProvider = ({children}) => {
   const [brastlewarkGnomes, setBrastlewarkGnomes] = useState(null);
   const [filteredGnomes, setFilteredGnomes] = useState(null);
   const [gnomeDetail, setGnomeDetail] = useState(null);
+  const [isOnline, setIsOnline] = useState(true);
+  const [errorOnLoad, setErrorOnLoad] = useState(false);
   const [pageLimit, setPageLimit] = useState(PAGE_STEP);
   const [gnomeProfession, setGnomeProfession] = useState(null);
 
   const loadGnomesData = async () => {
-    const gnomesResponse = await getBrastlewarkData();
-    setBrastlewarkGnomes(gnomesResponse?.data?.Brastlewark ?? null);
-    setFilteredGnomes(_.slice(gnomesResponse?.data?.Brastlewark, 0, pageLimit));
+    const isOnline = window.navigator.onLine;
+    setIsOnline(isOnline);
+    if (isOnline)
+      try {
+        setErrorOnLoad(false);
+        const gnomesResponse = await getBrastlewarkData();
+        setBrastlewarkGnomes(gnomesResponse?.data?.Brastlewark ?? null);
+        setFilteredGnomes(_.slice(gnomesResponse?.data?.Brastlewark, 0, pageLimit));
+        return;
+      } catch (error) {
+        setErrorOnLoad(true);
+        return;
+      }
   };
 
   const loadMoreGnomes = () => {
@@ -74,6 +86,8 @@ const GnomesProvider = ({children}) => {
   return (
     <GnomesContext.Provider
       value={{
+        isOnline,
+        errorOnLoad,
         brastlewarkGnomes,
         filteredGnomes,
         gnomeDetail,

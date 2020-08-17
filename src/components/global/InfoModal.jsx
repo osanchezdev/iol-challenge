@@ -60,7 +60,7 @@ const InfoModal = () => {
                     </Col>
                   ))
                 ) : (
-                  <Badge pill variant="light">
+                  <Badge pill variant="light" className="mx-3">
                     No professions
                   </Badge>
                 )}
@@ -86,7 +86,7 @@ const InfoModal = () => {
                     </Col>
                   ))
                 ) : (
-                  <Badge pill variant="light">
+                  <Badge pill variant="light" className="mx-3">
                     No friends
                   </Badge>
                 )}

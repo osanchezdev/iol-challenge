@@ -1,0 +1,10 @@
+.info-message--wrapper {
+  width: 100%;
+  text-align: center;
+  & .info-message--emoji {
+    font-size: 70px;
+  }
+  & .info-message--reload {
+    cursor: pointer;
+  }
+}
