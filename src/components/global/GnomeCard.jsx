@@ -28,7 +28,7 @@ const GnomeCard = ({id, name, thumbnail}) => {
             <LazyLoadImage alt={name} title={name} height={168} src={thumbnail} width={'100%'} />
           </div>
           <div className="gnome-card--title">
-            <p>{name} </p>
+            <p>{name}</p>
           </div>
         </div>
       </Link>

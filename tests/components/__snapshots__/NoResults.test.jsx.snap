@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on Loader Loader must be rendered correctly 1`] = `
+<div
+  className="loader--wrapper"
+>
+  <Spinner
+    animation="border"
+    variant="light"
+  />
+</div>
+`;
+
+exports[`Test on NoResults NoResults must be rendered correctly 1`] = `
+<ForwardRef(MotionComponent)
+  animate={
+    Object {
+      "opacity": 1,
+      "scale": 1,
+    }
+  }
+  className="no-results--wrapper"
+  initial={
+    Object {
+      "opacity": 0,
+      "scale": 0,
+    }
+  }
+  transition={
+    Object {
+      "damping": 20,
+      "stiffness": 260,
+      "type": "spring",
+    }
+  }
+>
+  <div
+    className="no-results--emoji"
+  >
+    <span>
+      😕
+    </span>
+  </div>
+  <h5
+    className="no-result--text"
+  >
+    No results, try searching something else
+  </h5>
+  <div
+    className="no-results--link"
+  >
+    <Link
+      to={
+        Object {
+          "pathname": "/",
+          "search": "",
+        }
+      }
+    >
+      <Badge
+        pill={true}
+        variant="light"
+      >
+        Reset filters
+      </Badge>
+    </Link>
+  </div>
+</ForwardRef(MotionComponent)>
+`;
+
+exports[`Tests in <Noresults /> <Noresults /> must be rendered correctly 1`] = `
+<ForwardRef(MotionComponent)
+  animate={
+    Object {
+      "opacity": 1,
+      "scale": 1,
+    }
+  }
+  className="no-results--wrapper"
+  initial={
+    Object {
+      "opacity": 0,
+      "scale": 0,
+    }
+  }
+  transition={
+    Object {
+      "damping": 20,
+      "stiffness": 260,
+      "type": "spring",
+    }
+  }
+>
+  <div
+    className="no-results--emoji"
+  >
+    <span>
+      😕
+    </span>
+  </div>
+  <h5
+    className="no-result--text"
+  >
+    No results, try searching something else
+  </h5>
+  <div
+    className="no-results--link"
+  >
+    <Link
+      to={
+        Object {
+          "pathname": "/",
+          "search": "",
+        }
+      }
+    >
+      <Badge
+        pill={true}
+        variant="light"
+      >
+        Reset filters
+      </Badge>
+    </Link>
+  </div>
+</ForwardRef(MotionComponent)>
+`;
+
+exports[`Tests in <Noresults /> NoResults must be rendered correctly 1`] = `
+<ForwardRef(MotionComponent)
+  animate={
+    Object {
+      "opacity": 1,
+      "scale": 1,
+    }
+  }
+  className="no-results--wrapper"
+  initial={
+    Object {
+      "opacity": 0,
+      "scale": 0,
+    }
+  }
+  transition={
+    Object {
+      "damping": 20,
+      "stiffness": 260,
+      "type": "spring",
+    }
+  }
+>
+  <div
+    className="no-results--emoji"
+  >
+    <span>
+      😕
+    </span>
+  </div>
+  <h5
+    className="no-result--text"
+  >
+    No results, try searching something else
+  </h5>
+  <div
+    className="no-results--link"
+  >
+    <Link
+      to={
+        Object {
+          "pathname": "/",
+          "search": "",
+        }
+      }
+    >
+      <Badge
+        pill={true}
+        variant="light"
+      >
+        Reset filters
+      </Badge>
+    </Link>
+  </div>
+</ForwardRef(MotionComponent)>
+`;
