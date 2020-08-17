@@ -8,7 +8,13 @@
     "build": "webpack --config=config/webpack/webpack.prod.js",
     "dev": "webpack-dev-server --config=config/webpack/webpack.dev.js --watch --open",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "test": "jest --coverage --watchAll --config=config/jest.json"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
   },
   "repository": {
     "type": "git",
@@ -27,26 +33,39 @@
   "homepage": "https://github.com/osanchezdev/iol-challenge#readme",
   "devDependencies": {
     "@babel/core": "^7.11.1",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "@babel/runtime": "^7.11.2",
+    "@testing-library/jest-dom": "^5.11.3",
+    "@types/jest": "^26.0.10",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.2.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.3",
+    "enzyme-to-json": "^3.5.0",
     "eslint": "^7.7.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.4.0",
+    "jest-enzyme": "^7.1.2",
     "mini-css-extract-plugin": "^0.10.0",
     "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1",
     "sass-loader": "^9.0.3",
     "simple-progress-webpack-plugin": "^1.1.2",
     "style-loader": "^1.2.1",
@@ -57,6 +76,7 @@
     "webpack-merge": "^5.1.1"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.10.4",
     "@hookform/resolvers": "^0.1.0",
     "add": "^2.0.6",
     "axios": "^0.19.2",
