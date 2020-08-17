@@ -2,10 +2,10 @@
 
 ### Tabla de contenido :rocket:
 
-- [Demo](#demo)
-- [Instalación](#instalación)
-- [Estructura del proyecto](#estructura)
-- [Librerías](#librerías)
+- [Demo](#demo-bulb)
+- [Instalación](#instalación-wrench)
+- [Estructura del proyecto](#estructura-del-proyecto-file_folder)
+- [Librerías](#librerías-package)
 
 ### Demo :bulb:
 
