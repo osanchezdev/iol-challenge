@@ -11,6 +11,17 @@ exports[`Test on Loader Loader must be rendered correctly 1`] = `
 </div>
 `;
 
+exports[`Tests on <Loader /> <Loader /> must be rendered correctly 1`] = `
+<div
+  className="loader--wrapper"
+>
+  <Spinner
+    animation="border"
+    variant="light"
+  />
+</div>
+`;
+
 exports[`Tests on <Loader /> Loader must be rendered correctly 1`] = `
 <div
   className="loader--wrapper"
