@@ -38,10 +38,15 @@ const InfoMessage = ({emoji, message, badgeLink, reloadButton}) => {
 };
 
 InfoMessage.propTypes = {
-  emoji: string,
+  emoji: string.isRequired,
   message: string.isRequired,
   badgeLink: bool,
   reloadButton: bool,
+};
+
+InfoMessage.defaultProps = {
+  emoji: '&#9996;',
+  message: 'Hi there!',
 };
 
 export default InfoMessage;

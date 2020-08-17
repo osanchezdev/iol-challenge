@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in <InfoMessage /> <InfoMessage /> must be rendered correctly 1`] = `
+<ForwardRef(MotionComponent)
+  animate={
+    Object {
+      "opacity": 1,
+      "scale": 1,
+    }
+  }
+  className="info-message--wrapper"
+  initial={
+    Object {
+      "opacity": 0,
+      "scale": 0,
+    }
+  }
+  transition={
+    Object {
+      "damping": 20,
+      "stiffness": 260,
+      "type": "spring",
+    }
+  }
+>
+  <div
+    className="info-message--emoji"
+  >
+    <span>
+      &#9996;
+    </span>
+  </div>
+  <h5
+    className="no-result--text"
+  >
+    Hi there!
+  </h5>
+</ForwardRef(MotionComponent)>
+`;
