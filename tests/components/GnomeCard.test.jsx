@@ -16,7 +16,7 @@ describe('Tests on <GnomeCard />', () => {
     expect(cardName).toBe('Unknown');
   });
 
-  test('<GnomeCard /> must be show gnome name passed by props', () => {
+  test('<GnomeCard /> must show gnome name passed by props', () => {
     const gnomeCardData = {
       id: 0,
       name: 'Gnome name',

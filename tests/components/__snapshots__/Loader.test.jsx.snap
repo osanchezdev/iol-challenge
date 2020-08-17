@@ -1,50 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test on Loader Loader must be rendered correctly 1`] = `
-<div
-  className="loader--wrapper"
->
-  <Spinner
-    animation="border"
-    variant="light"
-  />
-</div>
-`;
-
 exports[`Tests on <Loader /> <Loader /> must be rendered correctly 1`] = `
-<div
-  className="loader--wrapper"
->
-  <Spinner
-    animation="border"
-    variant="light"
-  />
-</div>
-`;
-
-exports[`Tests on <Loader /> Loader must be rendered correctly 1`] = `
-<div
-  className="loader--wrapper"
->
-  <Spinner
-    animation="border"
-    variant="light"
-  />
-</div>
-`;
-
-exports[`Tests on <Loader /> v must be rendered correctly 1`] = `
-<div
-  className="loader--wrapper"
->
-  <Spinner
-    animation="border"
-    variant="light"
-  />
-</div>
-`;
-
-exports[`Tests on Loader Loader must be rendered correctly 1`] = `
 <div
   className="loader--wrapper"
 >

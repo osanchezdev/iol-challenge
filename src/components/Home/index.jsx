@@ -2,9 +2,10 @@ import React, {Suspense, useEffect, useContext} from 'react';
 import qs from 'query-string';
 import Loader from '../global/Loader';
 import {motion} from 'framer-motion';
-import {Container, Row, Col, Badge} from 'react-bootstrap';
-import {Link, useLocation} from 'react-router-dom';
+import {Container, Row, Col} from 'react-bootstrap';
+import {useLocation} from 'react-router-dom';
 import {GnomesContext} from '../../context/gnomesContext';
+import ResetFiltersBadge from '../global/ResetFiltersBadge';
 
 const LazyGnomeCardsList = React.lazy(() => import('../global/GnomeCardsList'));
 const LazySearchForm = React.lazy(() => import('./SearchForm'));
@@ -46,16 +47,7 @@ const Home = () => {
           </motion.div>
           {parsedSearch.profession && (
             <div className="d-flex mb-2">
-              <h4>(Filtered by profession = {parsedSearch.profession}) </h4>{' '}
-              <Link
-                to={{
-                  pathname: '/',
-                  search: '',
-                }}>
-                <Badge pill variant="light">
-                  Reset filters
-                </Badge>
-              </Link>
+              <h4>(Filtered by profession = {parsedSearch.profession}) </h4> <ResetFiltersBadge />
             </div>
           )}
         </Col>
