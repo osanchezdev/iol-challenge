@@ -33,7 +33,7 @@ yarn dev
 
 ##### Start
 
-Con este script usamos `webpack-dev-server` pero con un bundle optimizado para producción, también cuenta con watchers activos.
+Este script crea un bundle optimizado para producción, y lo levanta con un servidor básico con [Express](https://expressjs.com/es/).
 
 ```bash
 yarn start

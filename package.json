@@ -4,7 +4,7 @@
   "description": "React app to help the IOL team with trading in Brastlewark",
   "main": "/src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --config=config/webpack/webpack.prod.js --open",
+    "start": "npm run build && node server/index.js",
     "build": "webpack --config=config/webpack/webpack.prod.js",
     "dev": "webpack-dev-server --config=config/webpack/webpack.dev.js --watch --open",
     "lint": "eslint .",
@@ -80,6 +80,7 @@
     "@hookform/resolvers": "^0.1.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.2",
+    "express": "4.17.1",
     "framer-motion": "^2.4.2",
     "prop-types": "^15.7.2",
     "query-string": "^6.13.1",
