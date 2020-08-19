@@ -77,17 +77,17 @@ A continuación una breve introducción al proyecto:
 
 1. `/config`: Aquí se encuentran los archivos de configuración de [Webpack](https://webpack.js.org/) y de [Jest](https://jestjs.io/).
 2. `/public`: Contiene el template `index.html` que usará [Webpack](https://webpack.js.org/) para incrustrar los links al JS y CSS luego de optimizar.
-3. `/src`: Tiene la mayor parte del proyecto:
-   3.1. `|-/api`: Contiene un archivo donde están los endpoints a usar por la app.
-   3.2. `|-/components`: Aquí están los componentes de [React](https://es.reactjs.org/) a usar en toda la app, están separados en 2 carpetas:
-   3.2.1. `|--/global`: En esta se encuentran aquellos componentes que podrían ser globales o muy utilizados por toda la app.
-   3.2.2. `|--/Home`: Contiene componentes específicos de la página/pantall del _HOME_.
-   3.3. `|-/constants`: Tiene 2 archivos, `index` que contiene constantes globales y `validationSchemas`que contiene los esquemas de validación que compatirán los diferentes formularios en la app.
-   3.4. `|-/context`: Aquí están aquellos componentes que manejan toda la lógica del estado y los datos a consumir desde otros componentes, haciendo uso de Context de [React](https://es.reactjs.org/), si la app crece más se recomienda cambiar a [redux](https://es.redux.js.org/).
-   3.5. `|-/router`: Contiene el archivo con la configuración de las diferentes rutas.
-   3.6. `|-/services`: Tiene todas aquellas funciones que se usarán para consumir datos externos.
-   3.7. `|-/styles`: Contiene todos los archivos de estilos.
-   3.8. `|-/app.jsx`: Archivo que contiene el componente principal (es el punto de entrada de [Webpack](https://webpack.js.org/)).
+3. `/src`: Tiene la mayor parte del proyecto:<br>
+   3.1. `|-/api`: Contiene un archivo donde están los endpoints a usar por la app.<br>
+   3.2. `|-/components`: Aquí están los componentes de [React](https://es.reactjs.org/) a usar en toda la app, están separados en 2 carpetas:<br>
+   3.2.1. `|--/global`: En esta se encuentran aquellos componentes que podrían ser globales o muy utilizados por toda la app.<br>
+   3.2.2. `|--/Home`: Contiene componentes específicos de la página/pantall del _HOME_.<br>
+   3.3. `|-/constants`: Tiene 2 archivos, `index` que contiene constantes globales y `validationSchemas`que contiene los esquemas de validación que compatirán los diferentes formularios en la app.<br>
+   3.4. `|-/context`: Aquí están aquellos componentes que manejan toda la lógica del estado y los datos a consumir desde otros componentes, haciendo uso de Context de [React](https://es.reactjs.org/), si la app crece más se recomienda cambiar a [redux](https://es.redux.js.org/).<br>
+   3.5. `|-/router`: Contiene el archivo con la configuración de las diferentes rutas.<br>
+   3.6. `|-/services`: Tiene todas aquellas funciones que se usarán para consumir datos externos.<br>
+   3.7. `|-/styles`: Contiene todos los archivos de estilos.<br>
+   3.8. `|-/app.jsx`: Archivo que contiene el componente principal (es el punto de entrada de [Webpack](https://webpack.js.org/)).<br>
 4. `/tests`: Está dividido en más carpetas que contiene todas las pruebas escritas del proyecto.
 5. `/.babelrc`: Archivo de configuración de [Babel](https://babeljs.io/).
 6. `/eslintrc.json`: Archivo de configuración de ESlint para mantener una estructura en cuanto a la sintáxis del código.
