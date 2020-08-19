@@ -36,4 +36,9 @@ module.exports = {
       favicon: path.resolve(__dirname, '../../public', 'favicon.ico'),
     }),
   ],
+  devServer: {
+    stats: {
+      warnings: false,
+    },
+  },
 };

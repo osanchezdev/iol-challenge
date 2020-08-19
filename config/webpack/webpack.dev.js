@@ -26,9 +26,6 @@ module.exports = merge(common, {
     contentBase: path.resolve(__dirname, '../../build'),
     port: 8888,
     historyApiFallback: true,
-    stats: {
-      warnings: false,
-    },
   },
   devtool: 'source-map',
 });
